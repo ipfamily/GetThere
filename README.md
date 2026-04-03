@@ -17,7 +17,7 @@
 |  **隐私优先** | 行程数据本地生成，不采集用户实时位置与轨迹 |
 
 
-## 🛠️ 技术实现（参考）
+## 整体架构
 
 - **前端**：`Vue 3 / React` + `TypeScript` + `TailwindCSS`
 - **卡片渲染**：`html2canvas` / `Puppeteer`（PDF高精度导出）
