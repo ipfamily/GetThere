@@ -61,11 +61,6 @@ git push
 3. 在 `Build and deployment` 里选择 `Source: GitHub Actions`
 4. 推送到 `main` 分支后会自动构建并部署
 
-### 部署地址
-
-默认会部署到：
-
-`https://ipfamily.github.io/GetThere/`
 
 ## 部署到其他平台
 
