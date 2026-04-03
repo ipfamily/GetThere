@@ -1,47 +1,78 @@
-# 怎么走 | GetThere
+# GetThere
 
-> 为亲人生成专属问路卡片，让老幼出行不再迷茫。
+GetThere 是一个帮助老人和孩子出行的问路卡片生成器，支持：
 
-## 项目摘要
+- 自定义行程步骤（高铁/地铁/公交/出租车/步行/飞机/轮渡/换乘）
+- 票务细节展示（车次、时间、检票口、座位等）
+- 一键导出图片和 PDF
+- 本地存储（不依赖后端）
 
-`怎么走 (GetThere)` 是一款面向长者、儿童及特殊出行人群的轻量级行程可视化工具。家人或照护者只需在平台录入行程信息，系统即可自动将复杂的换乘逻辑转化为**大字号、图标化、分段清晰的问路卡片**，支持一键导出为高清图片或打印级 PDF。无需依赖智能手机导航，纸质/电子卡片随身即可安心问路，真正解决“看不懂地图、记不住换乘、不敢开口问”的出行痛点。
+## 本地开发
 
-
-##  核心特性
-
-| 特性 | 说明 |
-|------|------|
-|  **亲人代录** | 支持远程输入行程，一键生成卡片，降低老幼自主操作门槛 |
-|  **适老排版** | 高对比色块、超大字体、交通图标替代文字，3秒看懂下一步 |
-|  **多格式导出** | 支持 `PNG/JPG`（手机保存）与 `PDF`（A6/A5打印），适配不同携带场景 |
-|  **隐私优先** | 行程数据本地生成，不采集用户实时位置与轨迹 |
-
-
-## 整体架构
-
-- **前端**：`Vue 3 / React` + `TypeScript` + `TailwindCSS`
-- **卡片渲染**：`html2canvas` / `Puppeteer`（PDF高精度导出）
-- **路线解析**：开放地图API + 自定义步行动线/换乘节点提取算法
-- **部署**：静态托管（Vercel/GitHub Pages）或轻量 Node.js 后端
-- **无障碍**：遵循 WCAG 2.1 AA 标准，支持屏幕阅读器与高对比模式
-
-
-## 快速开始
+1. 安装依赖
 
 ```bash
-# 克隆项目
-cd getthere
-
-# 安装依赖
 npm install
+```
 
-# 启动开发服务
+2. 启动开发环境
+
+```bash
 npm run dev
+```
 
-# 构建生产版本
+3. 生产构建
+
+```bash
 npm run build
 ```
 
-访问 `http://localhost:5173` 即可体验卡片生成流程。详细配置见 [开发文档](docs/DEV.md)。
+构建产物在 `dist/` 目录。
 
-如果项目对您有帮助，欢迎 Star 支持开发
+## 上传到 GitHub
+
+如果你还没有初始化仓库，可以按下面操作：
+
+```bash
+git init
+git add .
+git commit -m "feat: init GetThere project"
+git branch -M main
+git remote add origin https://github.com/ipfamily/GetThere.git
+git push -u origin main
+```
+
+如果仓库已存在，只需正常提交并推送：
+
+```bash
+git add .
+git commit -m "chore: update project"
+git push
+```
+
+## 部署到 GitHub Pages（自动）
+
+本项目已内置工作流文件：`.github/workflows/deploy.yml`。
+
+### 第一次启用步骤
+
+1. 打开 GitHub 仓库页面
+2. 进入 `Settings` -> `Pages`
+3. 在 `Build and deployment` 里选择 `Source: GitHub Actions`
+4. 推送到 `main` 分支后会自动构建并部署
+
+### 部署地址
+
+默认会部署到：
+
+`https://ipfamily.github.io/GetThere/`
+
+## 部署到其他平台
+
+如果你部署到 Vercel、Netlify、Cloudflare Pages 等，一般不需要额外改动，直接使用 `npm run build` 的 `dist/` 目录即可。
+
+如果部署路径不是根路径，可通过环境变量设置 Vite 的基础路径：
+
+```bash
+VITE_BASE_PATH=/your-base-path/ npm run build
+```
