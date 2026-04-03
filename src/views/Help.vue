@@ -1,0 +1,70 @@
+<script setup lang="ts">
+</script>
+
+<template>
+  <div class="min-h-screen">
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+      <div class="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
+        <RouterLink to="/" class="text-slate-500 hover:text-slate-700 transition-colors">← 返回首页</RouterLink>
+        <span class="text-slate-300">|</span>
+        <h1 class="font-bold text-slate-800">使用帮助</h1>
+      </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-10">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 space-y-6">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-slate-800">GetThere 使用帮助</h2>
+        </div>
+
+        <hr class="border-slate-100" />
+
+        <section>
+          <h3 class="text-lg font-bold text-slate-700 mb-2">1. 创建新卡片</h3>
+          <p class="text-slate-600 leading-relaxed">
+            在首页点击“创建问路卡片”，填写出行人姓名、日期、出发地和目的地。卡片标题可选，留空会自动使用默认标题。
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-bold text-slate-700 mb-2">2. 添加行程步骤</h3>
+          <p class="text-slate-600 leading-relaxed">
+            点击“添加步骤”，按顺序填写每一段行程。高铁、飞机、轮船支持票务字段（出发/到达站、时间、检票口、座位），
+            其余交通方式可填写通用说明与关键信息。
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-bold text-slate-700 mb-2">3. 设置风格和布局</h3>
+          <p class="text-slate-600 leading-relaxed">
+            你可以选择不同主题色和步骤布局（票据流、时间线、卡片式），右侧预览会实时同步，所见即所得。
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-bold text-slate-700 mb-2">4. 补充应急信息</h3>
+          <p class="text-slate-600 leading-relaxed">
+            建议至少添加 1 位紧急联系人；如有病史、过敏或特殊用药，可在“急救信息”中写明，方便他人协助。
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-bold text-slate-700 mb-2">5. 保存与导出</h3>
+          <p class="text-slate-600 leading-relaxed">
+            完成后点击“保存去下载”或在预览页导出 PNG/PDF。建议提前打印一份随身携带，并在手机里保留电子版。
+          </p>
+        </section>
+
+        <section class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+          <h3 class="text-sm font-bold text-blue-700 mb-1">常见问题</h3>
+          <p class="text-sm text-blue-700/90 leading-relaxed">
+            所有数据默认仅保存在当前浏览器本地。若清除浏览器缓存或更换设备，卡片不会自动同步，请及时导出备份。
+          </p>
+          <p class="text-sm text-blue-700/90 leading-relaxed">
+            该项目完全免费且开源，无须为此付费。请勿轻信任何以“GetThere”名义进行的收费行为，谨防诈骗。
+          </p>
+        </section>
+      </div>
+    </main>
+  </div>
+</template>
